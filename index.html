@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Plan Your Dinner Party</title>
+	<link rel="stylesheet" href="style.scss">
+	<link href='https://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
+
+
+</head>
+<body>
+
+<div class="wrapper">
+
+<h1>Plan Your <br> <span>Dinner Party</span></h1>
+	<form action="">
+		<input type="text" placeholder="# of people" id="people" class="people">
+		<div class="line"></div>
+		<h2>Pick Music</h2>
+		<select id="item"></select>
+		<div class="line"></div>
+		<h2>Dietary Restrictions</h2>
+		<select name="allergy" id="DietaryRestrictions">
+			<option value="">None</option>
+			<option value="Gluten%20Free">Gluten Free</option>
+			<option value="Vegan">Vegan</option>
+			<option value="Dairy%20Free">Dairy Free</option>
+			<option value="Nut%20Free">Nut Allergy</option>
+		</select>
+		<div class="line"></div>
+		<h2>Type of Event</h2>
+		<input type="radio" id="cat1" name="holiday" value="Halloween">
+		<label for="cat1">Halloween</label>
+		<input type="radio" id="cat2" name="holiday" value="Thanksgiving">
+		<label for="cat2">Thanksgiving</label>
+		<input type="radio" id="cat3" name="holiday" value="Christmas">
+		<label for="cat3">Winter Holidays</label>
+		<input type="radio" id="cat4" name="holiday" value="Summer">
+		<label for="cat4">Summer</label>
+		<input type="radio" id="cat5" name="holiday" value="">
+		<label for="cat5">Don't need a reason</label>
+
+		<div>
+			<input type="submit" class="submit" name="submit" value="Get Ideas">
+		</div>
+	</form>
+	</div>
+
+	<div class="bottom">
+		<div class="suggestionWrapper">
+				<h2 class="answerTitle">Recipe Suggestions</h2>
+				<div class="line"></div>
+				<section class="recipes clearfix" id="answer">
+				</section>
+			
+				<h2 class="answerTitle">Play these Artists</h2>
+				<div class="line"></div>
+				<section class="artists">
+				</section>
+
+				<input type="submit" class="refresh" value="Start Over">
+		
+		</div>
+	</div>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+	<script src="dinner-party.js"></script>
+
+</body>
+</html>
