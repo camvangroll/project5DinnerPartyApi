@@ -3,43 +3,80 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Plan Your Dinner Party</title>
+	<link href='https://fonts.googleapis.com/css?family=Lora:400,700|Roboto' rel='stylesheet' type='text/css'>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="style.scss">
-	<link href='https://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
-	<link href='https://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
-
-
+	<link rel="icon" type="image/png" href="images/favicon.png"/>
+	<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+	<script type="text/javascript">stLight.options({publisher: "d5cebd0a-c493-4f43-aa7c-36d157c7edcf", doNotHash: false,doNotCopy: false, hashAddressBar: false});</script>
 </head>
+
+<!-- Knife and Fork Favicon/Image courtesy of José Campos from The Noun Project -->
+
 <body>
 
-<div class="wrapper">
+	<div class="social">
+		<span class='st_facebook_hcount' displayText='Facebook'></span>
+		<span class='st_twitter_hcount' displayText='Tweet'></span>
+	</div>
 
-<h1>Plan Your <br> <span>Dinner Party</span></h1>
+<div class="wrapper top">
+
+<h1>Plan Your Dinner Party</h1>
 	<form action="">
-		<input type="text" placeholder="# of people" id="people" class="people">
+		<h2>Number of People:<input type="text" id="people" class="people"></h2>
 		<div class="line"></div>
-		<h2>Pick Music</h2>
-		<select id="item"></select>
+		<h2>Choose Music:
+		<select id="item">
+			<option value="old%20school%20hip%20hop">Old School Hip Hop</option>
+			<!-- <option value="new%orleans%20jazz">New Orleans Jazz</option> -->
+			<option value="abstract">Abstract</option>
+			<option value="deep%20house">Deep House</option>
+			<option value="dutch%20pop">Dutch Pop</option>
+			<option value="edm">EDM</option>
+			<option value="electro%20punk">Electro Punk</option>
+			<option value="funk">Funk</option>
+			<option value="indie%20folk">Indie Folk</option>
+			<option value="afrobeats">Afrobeats</option>
+			<option value="jazz">Jazz</option>
+			<option value="classical%20christmas">Classical Christmas</option>
+			<option value="nu%20age">Nu Age</option>
+			<option value="k-pop">K-pop</option>
+			<option value="native%20american">Native American</option>
+			<option value="modern%20blues">Modern Blues</option>
+			<option value="motown">Motown</option>
+			<option value="french%20folk">French Folk</option>
+			<option value="norwegian%20punk">Norwegian Punk</option>
+		</select>
+		</h2>
 		<div class="line"></div>
-		<h2>Dietary Restrictions</h2>
-		<select name="allergy" id="DietaryRestrictions">
-			<option value="">None</option>
+		<h2>Dietary Restrictions:
+		<select name="allergy" class="allergy" id="DietaryRestrictions">
 			<option value="Gluten%20Free">Gluten Free</option>
 			<option value="Vegan">Vegan</option>
 			<option value="Dairy%20Free">Dairy Free</option>
 			<option value="Nut%20Free">Nut Allergy</option>
+			<option value="">None</option>
 		</select>
+		</h2>
 		<div class="line"></div>
-		<h2>Type of Event</h2>
-		<input type="radio" id="cat1" name="holiday" value="Halloween">
-		<label for="cat1">Halloween</label>
-		<input type="radio" id="cat2" name="holiday" value="Thanksgiving">
-		<label for="cat2">Thanksgiving</label>
-		<input type="radio" id="cat3" name="holiday" value="Christmas">
-		<label for="cat3">Winter Holidays</label>
-		<input type="radio" id="cat4" name="holiday" value="Summer">
-		<label for="cat4">Summer</label>
-		<input type="radio" id="cat5" name="holiday" value="">
-		<label for="cat5">Don't need a reason</label>
+		<h2>Type of Event:</h2>
+
+		<div class="typeOfEvent">
+			<input type="radio" id="cat1" name="holiday" value="Halloween">
+			<label for="cat1">Halloween</label>
+			<input type="radio" id="cat2" name="holiday" value="Thanksgiving">
+			<label for="cat2">Thanksgiving</label>
+			<input type="radio" id="cat3" name="holiday" value="Christmas">
+			<label for="cat3">Winter Holidays</label>	
+		</div>
+
+		<div>
+			<input type="radio" id="cat4" name="holiday" value="Summer">
+			<label for="cat4">Summer</label>
+			<input type="radio" id="cat5" name="holiday" value="">
+			<label for="cat5">Don't need a reason</label>
+		</div>
 
 		<div>
 			<input type="submit" class="submit" name="submit" value="Get Ideas">
@@ -49,20 +86,32 @@
 
 	<div class="bottom">
 		<div class="suggestionWrapper">
-				<h2 class="answerTitle">Recipe Suggestions</h2>
-				<div class="line"></div>
-				<section class="recipes clearfix" id="answer">
-				</section>
+
+				<div class="wrapper food">
+					<h2 class="answerTitle">Recipe Suggestions</h2>
+					<div class="line"></div>
+					<section class="recipes clearfix" id="answer">
+					</section>
+				</div>
 			
-				<h2 class="answerTitle">Play these Artists</h2>
-				<div class="line"></div>
-				<section class="artists">
-				</section>
+						<div class="wrapper">
+							<div class="innerWrapper-artists">
+									<h2 class="answerTitle">Play these Artists</h2>
+									<div class="line"></div>
+									<section class="artists">
+									</section>
+									<p>Artist information powered by the <a href="http://the.echonest.com/">Echo Nest API.</a></p>
+								</div>
+						</div>
+			
 
 				<input type="submit" class="refresh" value="Start Over">
 		
-		</div>
+		</div>	
+		<p class="copyright">&copy; Camille van Groll 2015</p>
 	</div>
+
+	
 
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>

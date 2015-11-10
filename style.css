@@ -176,45 +176,63 @@ body {
   line-height: 35px;
   background-image: url(images/lights.jpg);
   background-repeat: no-repeat;
-  color: black;
-  font-family: 'PT Serif', serif;
+  color: #293C40;
   text-transform: uppercase;
 }
 
+.social {
+  position: relative;
+  left: 530px;
+  top: 8px;
+  display: block;
+}
+
+.stMainServices {
+  height: 24px !important;
+}
+
+.stButton .stArrow {
+  display: none !important;
+}
+
+.wrapper.top {
+  margin: 1% auto;
+}
+
 .wrapper {
-  width: 28%;
-  margin: 5% auto;
-  padding: 20px 0;
-  border: 5px solid black;
+  width: 60%;
+  margin: 1% auto;
+  border: 2px solid #FCF5ED;
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .suggestionWrapper {
-  width: 50%;
   margin: 0 auto;
   display: none;
-  padding: 10% 0;
+  padding: 20px;
 }
 
 .bottom {
   background: #f9f5ea;
 }
 
-h1 span {
-  text-transform: uppercase;
-  font-size: 3.6rem;
-  letter-spacing: 2px;
-  font-family: 'PT Serif', serif;
-}
-
 h1 {
-  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  font-size: 4.4rem;
+  letter-spacing: 2px;
+  font-family: 'Lora', serif;
+  padding: 60px 0 17px 0;
+  color: #293C40;
 }
 
 h2 {
   margin-bottom: 0;
-  padding-top: 15px;
-  font-family: 'Oswald', sans-serif;
+  padding: 30px 0;
+  padding-bottom: 20px;
+  font-family: 'Roboto', sans-serif;
   font-weight: thin;
+  font-size: 1.5rem;
+  color: #346069;
 }
 
 .line {
@@ -228,9 +246,11 @@ h2 {
 }
 
 input[type=text].people {
-  width: 100px;
+  width: 50px;
   padding: 5px;
-  background: white;
+  border: 2px solid #EBE4D4;
+  margin-left: 10px;
+  background: #fdf9f4;
   color: black;
   border-radius: 5px 5px 5px 5px;
 }
@@ -244,12 +264,25 @@ input[type=radio] + label {
   height: 50px;
   z-index: 999;
   line-height: 50px;
-  margin: 5px;
-  transition: all 0.5s;
+  color: #68A7B8;
+  margin: 25px;
+  transition: all 0.2s;
+  border: 2px solid #EBE4D4;
+  background: #fdf9f4;
+  padding: 10px 20px;
+  border-radius: 5px 5px 5px 5px;
+}
+
+input[type=radio] + label:hover {
+  cursor: pointer;
+}
+
+.typeOfEvent {
+  padding: 15px;
 }
 
 input[type=radio]:checked + label {
-  color: white;
+  color: #346069;
 }
 
 input[type=radio]:unchecked + label {
@@ -258,57 +291,124 @@ input[type=radio]:unchecked + label {
 
 input[type=text], select {
   text-align: center;
-  text-align: center;
-  padding: 5px 10px;
+  padding: 5px 30px;
   font-size: 12px;
-  width: 100px;
+  width: 170px;
+  margin-left: 5px;
+  border: 2px solid #EBE4D4;
+  background: #fdf9f4;
+  color: black;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.allergy {
+  width: 125px;
 }
 
 input[type=submit] {
   padding: 5px;
-  margin-top: 20px;
-  background: white;
-  border: none;
-  color: #131334;
+  margin: 40px 0;
+  background: #fdf9f4;
+  border: 4px solid #FCF5ED;
+  color: #293C40;
   padding: 5px 20px;
   text-transform: uppercase;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: bold;
   border-radius: 5px 5px 5px 5px;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Lora', serif;
 }
 
 section.recipes, section.artists {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+section.recipes div:nth-last-child(n+2), section.recipes div:nth-last-child(n+2) ~ div {
+  flex: 1 0 50%;
+}
+
+section.recipes div:nth-last-child(n+3), section.recipes div:nth-last-child(n+3) ~ div {
+  flex: 1 0 33.33%;
+}
+
+section.artists {
+  width: 85%;
+  margin: 0 auto;
+}
+
+select {
+  -webkit-appearance: none;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #346069;
+}
+
+a:hover {
+  color: #68A7B8;
+}
+
+.wrapper.food {
+  width: 80%;
+  margin: 3% auto;
+  border: 2px solid #FCF5ED;
+  background: rgba(255, 255, 255, 0.5);
 }
 
 h2.answerTitle {
-  font-family: 'PT Serif', serif;
+  font-family: 'Lora', serif;
   font-size: 3.2rem;
 }
 
 .recipes div {
-  width: 50%;
   margin: 0 auto;
+  padding: 15px;
 }
 
 .recipe div, .artists div {
   padding-bottom: 45px;
 }
 
+.recipes img {
+  border: 2px solid #F8E9D6;
+  padding: 10px;
+  max-width: 100%;
+}
+
+.recipes img:last-child {
+  padding: 0;
+  border: none;
+}
+
 .recipes ul {
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 
 .recipes h2 {
   text-align: center;
   text-transform: uppercase;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Lora', serif;
+  font-size: 1.8rem;
 }
 
-.artists a, .recipes a {
-  text-decoration: none;
-  color: #131334;
+.innerWrapper-artists {
+  margin: 10px;
+  border: 2px solid #F8E9D6;
+}
+
+p.copyright {
+  margin: 0;
+  text-transform: uppercase;
+  color: #346069;
+  text-align: right;
+  padding-right: 60px;
 }
