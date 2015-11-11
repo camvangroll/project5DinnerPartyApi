@@ -264,6 +264,97 @@ p.copyright {
 
 }
 
+@media (max-width: 1045px) {
+
+	.social {
+		left: 290px;
+	}
+
+	.wrapper {
+		width: 75%;
+	}
+
+}
+
+
+@media (max-width: 940px) {
+
+	.wrapper {
+		width: 85%;
+	}
+
+	
+
+	section.recipes div:nth-last-child(n+2) ~ div {
+    flex: 1 0 100%;
+}
+
+}
+
+@media (max-width: 768px) {
+	
+	.wrapper {
+		width: 95%;
+	}
+
+	.social {
+		left: 300px;
+		top: 7px;
+	}
+
+	section.recipes div:nth-last-child(n+3) ~ div {
+    flex: 1 0 100%;
+}
+
+section.artists {
+		flex-direction: column;
+	}
+
+	.artists div {
+		padding-bottom: 0;
+	}
+
+.artist h2 {
+	font-size: 1.2rem;
+}
+	
+
+}
+
+@media (max-width: 480px) {
+
+	.wrapper {
+		width: 97%;
+	}
+
+	.wrapper.top {
+		margin: 0 auto;
+	}
+
+	.social {
+		top: 55px;
+		left: 0;
+	}
+
+	input[type=radio] + label {
+		margin: 0;
+	}
+
+	section.recipes div:nth-last-child(n+2), section.recipes div:nth-last-child(n+3) ~ div {
+	flex: 1 0 100%;
+	}
+
+	section.recipes div:nth-last-child(n+3), section.recipes div:nth-last-child(n+3) ~ div {
+	flex: 1 0 100%;
+}
+
+	p.copyright {
+		text-align: center;
+		padding-right: 0;
+	}
+
+}
+
 
 
 

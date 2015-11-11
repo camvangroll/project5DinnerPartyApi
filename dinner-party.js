@@ -204,11 +204,15 @@ dinnerParty.displayRecipes = function(res){
 dinnerParty.displayArtists = function(artwork){
 	$('section.artists').empty();
 	$.each(artwork.response.artists, function(i, item) {
-		var artistTitle = $('<h2>').text(item.name);
-		// var artistImage = $('<img>').attr('src', item.images[0].url);
-		var artistUrl = $('<a>').attr('href', item.urls.lastfm_url).text("Play Artist");
-		var container2 = $('<div>').append(artistTitle, artistUrl);
-		var artistSection = $('section.artists').append(container2);
+		if (item.urls != undefined ) {
+			var artistTitle = $('<h2>').text(item.name);
+			// var artistImage = $('<img>').attr('src', item.images[0].url);
+			var artistUrl = $('<a>').attr('href', item.urls.lastfm_url).text("Play Artist").attr('target', "_blank");
+			var container2 = $('<div>').append(artistTitle, artistUrl);
+			var artistSection = $('section.artists').append(container2);
+		}
+
+		
 	});
 
 }
