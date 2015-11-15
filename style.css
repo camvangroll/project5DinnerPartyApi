@@ -267,7 +267,7 @@ input[type=radio] + label {
   color: #68A7B8;
   margin: 25px;
   transition: all 0.2s;
-  border: 2px solid #EBE4D4;
+  border: 1px solid #EBE4D4;
   background: #fdf9f4;
   padding: 10px 20px;
   border-radius: 5px 5px 5px 5px;
@@ -283,6 +283,7 @@ input[type=radio] + label:hover {
 
 input[type=radio]:checked + label {
   color: #346069;
+  border: 1px solid #68A7B8;
 }
 
 input[type=radio]:unchecked + label {
