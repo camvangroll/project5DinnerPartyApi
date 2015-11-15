@@ -181,10 +181,7 @@ body {
 }
 
 .social {
-  position: relative;
-  left: 530px;
-  top: 8px;
-  display: block;
+  padding-top: 10px;
 }
 
 .stMainServices {
@@ -221,7 +218,7 @@ h1 {
   font-size: 4.4rem;
   letter-spacing: 2px;
   font-family: 'Lora', serif;
-  padding: 60px 0 17px 0;
+  padding-bottom: 17px;
   color: #293C40;
 }
 
@@ -406,18 +403,19 @@ h2.answerTitle {
   border: 2px solid #F8E9D6;
 }
 
-p.copyright {
+footer p:first-child {
+  margin: 0;
+}
+
+.copyright {
   margin: 0;
   text-transform: uppercase;
   color: #346069;
   text-align: right;
-  padding-right: 60px;
+  padding-right: 5%;
 }
 
 @media (max-width: 1045px) {
-  .social {
-    left: 290px;
-  }
   .wrapper {
     width: 75%;
   }
@@ -435,10 +433,6 @@ p.copyright {
 @media (max-width: 768px) {
   .wrapper {
     width: 95%;
-  }
-  .social {
-    left: 300px;
-    top: 7px;
   }
   section.recipes div:nth-last-child(n+3) ~ div {
     flex: 1 0 100%;
@@ -461,10 +455,6 @@ p.copyright {
   .wrapper.top {
     margin: 0 auto;
   }
-  .social {
-    top: 55px;
-    left: 0;
-  }
   input[type=radio] + label {
     margin: 0;
   }
@@ -473,9 +463,5 @@ p.copyright {
   }
   section.recipes div:nth-last-child(n+3), section.recipes div:nth-last-child(n+3) ~ div {
     flex: 1 0 100%;
-  }
-  p.copyright {
-    text-align: center;
-    padding-right: 0;
   }
 }
