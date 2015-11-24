@@ -7,9 +7,12 @@ dinnerParty.maincourses = "course^course-Main%20Dishes";
 dinnerParty.apps = "course^course-Appetizers";
 dinnerParty.desserts = "course^course-Desserts";
 
+
  
 
- dinnerParty.getMains = function(allergy,holiday) {
+ dinnerParty.getMains = function() {
+ 	var allergy = $('#DietaryRestrictions').val();
+	var holiday = $('input[name=holiday]:checked').val();
  	$.ajax({
 	 	url: "http://api.yummly.com/v1/api/recipes",
 	 	method: 'GET',
@@ -18,15 +21,11 @@ dinnerParty.desserts = "course^course-Desserts";
 	 		allowedCourse: dinnerParty.maincourses,
 	 		_app_key: dinnerParty.appKey,
 	 		_app_id: dinnerParty.appId,
-	 		q: allergy,
-	 		q: holiday,
-	 		maxResult: "1"
+	 		allowedAllergy: allergy,
+	 		allowedHoliday: holiday
 	 	}
 	}).then(function(res){
-
 		var recipeId = res.matches[0].id;
-
-		//Calling a new function that will hold our results and put the ID to use
 
 		dinnerParty.getInfoMains(recipeId);
 
@@ -44,14 +43,15 @@ dinnerParty.getInfoMains = function(idSent){
 	 		_app_id: dinnerParty.appId
 		}
 	}).then(function(res) {
-		console.log(res);
 		dinnerParty.displayRecipes(res);
 	});
 }
 
 
 
-dinnerParty.getDesserts = function(allergy,holiday) {
+dinnerParty.getDesserts = function() {
+	var allergy = $('#DietaryRestrictions').val();
+	var holiday = $('input[name=holiday]:checked').val();
 	$.ajax({
 		url: "http://api.yummly.com/v1/api/recipes?",
 		method: 'GET',
@@ -60,8 +60,8 @@ dinnerParty.getDesserts = function(allergy,holiday) {
 			allowedCourse: dinnerParty.desserts,
 			_app_key: dinnerParty.appKey,
 	 		_app_id: dinnerParty.appId,
-	 		q: allergy,
-	 		q: holiday,
+	 		allowedAllergy: allergy,
+	 		allowedHoliday: holiday,
 	 		maxResult: "1"
 		}
 	}).then(function(res){
@@ -92,7 +92,9 @@ dinnerParty.getInfoDesserts = function(idSent){
 
 
 
-dinnerParty.getApps = function(allergy,holiday) {
+dinnerParty.getApps = function() {
+	var allergy = $('#DietaryRestrictions').val();
+	var holiday = $('input[name=holiday]:checked').val();
 	$.ajax({
 		url: "http://api.yummly.com/v1/api/recipes?",
 		method: 'GET',
@@ -101,8 +103,8 @@ dinnerParty.getApps = function(allergy,holiday) {
 			allowedCourse: dinnerParty.apps,
 			_app_key: dinnerParty.appKey,
 	 		_app_id: dinnerParty.appId,
-	 		q: allergy,
-	 		q: holiday,
+	 		allowedAllergy: allergy,
+	 		allowedHoliday: holiday,
 	 		maxResult: "1"
 		}
 	}).then(function(res){
@@ -131,18 +133,6 @@ dinnerParty.getInfoApps = function(idSent){
 	});
 }
 
-// dinnerParty.populateGenres = function() {
-// 	$.ajax({
-// 		url: 'http://developer.echonest.com/api/v4/genre/list?api_key=NGHRLRLHEFDPL3VY8&format=json',
-// 		method: 'GET',
-// 		dataType: 'json'
-// 	}).then(function(res) {
-// 		for(var i = 0; i < res.response.genres.length; i++) {
-// 			$('select#item').append('<option value="' + res.response.genres[i].name + '">' + res.response.genres[i].name + '</option>');
-// 		}
-// 	});
-// }
-
 dinnerParty.getArtists = function(res) {
 	var userGenre = $('#item').val();
 	$.ajax({
@@ -162,22 +152,20 @@ dinnerParty.formSubmit = function() {
 		$('.suggestionWrapper').show();
 
 		var numberOfPeople = $('#people').val();
-		var allergy = $('#DietaryRestrictions').val();
-		var holiday = $('input[name=holiday]:checked').val();
 		
 		$('section.recipes').empty();
 		if (numberOfPeople < 3) {
-		 	dinnerParty.getMains(allergy,holiday);
+		 	dinnerParty.getMains();
 		 }
 		 if (numberOfPeople == 3 || numberOfPeople == 4){
-		 		dinnerParty.getMains(allergy,holiday);
-		 		dinnerParty.getDesserts(allergy,holiday);
+		 		dinnerParty.getMains();
+		 		dinnerParty.getDesserts();
 		 }
 
 	 	if (numberOfPeople > 4) {
-	 		dinnerParty.getApps(allergy,holiday);
-	 		dinnerParty.getMains(allergy,holiday);
-	 		dinnerParty.getDesserts(allergy,holiday);
+	 		dinnerParty.getApps();
+	 		dinnerParty.getMains();
+	 		dinnerParty.getDesserts();
 	 	}
 
 	 	dinnerParty.getArtists();
